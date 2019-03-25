@@ -2,7 +2,7 @@ package com.hc.Test1_3;
 
 public class Test1_3 {
     public static void main(String[] args) {
-        int a = (int) (Math.random() * 10e8);
+        int a = (int) (((Math.random() *9)+1)*10000000);
         System.out.println(a);
         changeString(a);
     }
@@ -14,7 +14,7 @@ public class Test1_3 {
     static void changeString(int a){
         String str = String.valueOf(a);
         for(int i=0;i<str.length();i++){
-            System.out.println(str.charAt(i));
+            System.out.print(str.charAt(i));
         }
     }
 

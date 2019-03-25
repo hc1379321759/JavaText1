@@ -3,26 +3,28 @@ package com.hc.Test1_4;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Test1_4 {
+    static int NUMBERS= 100;
     public static void main(String[] args) {
-        ArrayList<Float> list1 = new ArrayList<Float>();
-        ArrayList<String> list2 = new ArrayList<String>();
-        ArrayList<Float> list3 = new ArrayList<Float>();
+        List<Float> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
+        List<Float> list3 = new ArrayList<>();
         float random;
-        for(int i=0;i<=100;i++){
+        for(int i=0;i<=NUMBERS;i++){
             random = (float)Math.random()*100;
             list1.add(random);
         }
         System.out.println(list1);
-        writeTxtFlieOutFloatArrList(list1,"C:\\Users\\Windows\\Desktop\\宝云java入门自测题目\\random_numbers.txt");
+        writeTxtFlieOutFloatArrList((ArrayList<Float>) list1,"C:\\Users\\Windows\\Desktop\\宝云java入门自测题目\\random_numbers.txt");
 //        maxFive(list1);
         list2=readTxtFileIntoStringArrList("C:\\Users\\Windows\\Desktop\\宝云java入门自测题目\\random_numbers.txt");
         for(int i=0;i<list2.size();i++){
             list3.add(Float.parseFloat(list2.get(i)));//将String转换为float
         }
         Collections.sort(list3);
-        writeTxtFlieOutFloatArrList(list3,"C:\\Users\\Windows\\Desktop\\宝云java入门自测题目\\sorted_numbers.txt");
+        writeTxtFlieOutFloatArrList((ArrayList<Float>) list3,"C:\\Users\\Windows\\Desktop\\宝云java入门自测题目\\sorted_numbers.txt");
 
     }
 

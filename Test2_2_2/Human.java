@@ -1,5 +1,8 @@
 package com.hc.Test2_2_2;
 
+/**
+ * 人
+ */
 public class Human {
     private String head;
     private String body;

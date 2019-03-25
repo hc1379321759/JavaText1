@@ -7,7 +7,7 @@ public class Test1_5 {
 
     public static void main(String[] args) {
         String str ="Java is a general-purpose computer-programming language";
-        getZimu(str);
+        countChar(str);
     }
 
     /**
@@ -15,7 +15,7 @@ public class Test1_5 {
      * 再利用hashmap计数
      * @param str
      */
-    static void getZimu(String str){
+    static void countChar(String str){
         HashMap<Character, Integer> map = new HashMap<>();
         str=str.toLowerCase();
         for(int i=0; i<str.length(); i++){

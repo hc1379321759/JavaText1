@@ -8,12 +8,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+
 public class Test1_4_5  {
+    static int STUDENTS_NUMBERS=100;
+
     public static void main(String[] args) {
         Test1_4_5 t =new Test1_4_5();
         ArrayList<Student> students = new ArrayList<>();
         int height;
-        for(int i=1;i<=100;i++){
+        for(int i=1;i<=STUDENTS_NUMBERS;i++){
             height =(int)(Math.random()*100+100);
             students.add(new Student(i,height));
         }
@@ -26,7 +29,7 @@ public class Test1_4_5  {
 
     public static void writeStudentOutTxt(ArrayList<Student> students,String filePath){
         try{
-            String encoding = "GBK";
+            String encoding = "UTF-8";
             File file = new File(filePath);
             if (file.isFile() && file.exists()) { // 判断文件是否存在
                 OutputStreamWriter out = new OutputStreamWriter(
@@ -42,8 +45,6 @@ public class Test1_4_5  {
             e.printStackTrace();
         }
     }
-
-
 
     public static class Student{
         private Integer id;

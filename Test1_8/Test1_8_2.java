@@ -1,10 +1,11 @@
 package com.hc.Test1_8;
 
 public class Test1_8_2 {
+    static int THREADS_NUMBERS=10;
     public static void main(String[] args) {
         LockObject lockObject = new LockObject(0);
-        MyThread[] mythreads = new MyThread[10];
-        for (int i = 0; i < 10; i++) {
+        MyThread[] mythreads = new MyThread[THREADS_NUMBERS];
+        for (int i = 0; i < mythreads.length; i++) {
             mythreads[i] = new MyThread(lockObject, i);
             mythreads[i].start();
         }
@@ -48,7 +49,7 @@ public class Test1_8_2 {
                 while (lockObject.value <= lockObject.getMaxValue()) {
                     if (lockObject.value == myNum) { //当线程id和value值相等时，该线程打印
                         System.out.println(
-                                Thread.currentThread().getName() + " " + lockObject.value);
+                                Thread.currentThread().getName() +"    "+ lockObject.value);
                         lockObject.value++;
                         lockObject.notifyAll();//打印完后，唤醒所有线程
                     } else {
